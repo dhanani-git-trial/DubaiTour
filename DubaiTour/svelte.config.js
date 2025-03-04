@@ -13,7 +13,7 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			'$css': path.resolve('src/lib/css'),
+			$css: 'src/lib/css',
 			$components: 'src/lib/components',
 		}
 	}
