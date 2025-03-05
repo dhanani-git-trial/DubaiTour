@@ -2,11 +2,33 @@
   import Card from "$components/Card.svelte";
   import Nav from "$components/Nav.svelte";
   import "$css/history.css";
+
+  function trans() {
+    const elements = document.querySelectorAll('.carousel-indicators');
+    
+    elements.forEach((element) => {
+      element.style.transition = 'opacity 0.5s ease-in-out'; // Smooth transition for opacity
+      element.style.opacity = 0; // Start fading out to 0
+
+      // Listen for the transition end event
+      element.addEventListener('transitionend', function onTransitionEnd() {
+        // Once the opacity reaches 0, reverse the transition
+        element.style.transition = 'opacity 0.5s ease-in-out'; // Ensure the transition is still smooth
+        element.style.opacity = 1; // Fade back to 1
+
+        // Remove the event listener to avoid repeating the logic
+        element.removeEventListener('transitionend', onTransitionEnd);
+      });
+    });
+  }
 </script>
+
+
+
 <Nav/>
 <article>
 <div class="carousel slide" data-ride="carousel" data-interval="3000">
-  <ol class="carousel-indicators">
+  <ol on:click={trans} class="carousel-indicators">
     <li data-target=".carousel" data-slide-to="0" class="active"></li>
     <li data-target=".carousel" data-slide-to="1"></li>
     <li data-target=".carousel" data-slide-to="2"></li>
@@ -90,11 +112,11 @@
   </div>
   
   <!-- Navigation buttons -->
-  <button class="carousel-control-prev" style="opacity: 1;" href=".carousel" data-slide="prev">
+  <button on:click={trans} class="carousel-control-prev" style="opacity: 1;" href=".carousel" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </button>
-  <button class="carousel-control-next" style="opacity: 1;" href=".carousel" data-slide="next">
+  <button on:click={trans} class="carousel-control-next" style="opacity: 1;" href=".carousel" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </button>
