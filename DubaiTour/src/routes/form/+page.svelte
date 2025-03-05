@@ -1,10 +1,10 @@
 <script>
     import Nav from '$components/Nav.svelte';
-    import TCard from '$components/TCard.svelte';
+    import Card from '$components/Card.svelte';
 </script>
 <Nav/>
 <br><br><br>
-<TCard>
+<Card>
 <span slot="title">
   
 <form>
@@ -53,4 +53,4 @@
     
 </span>
 
-</TCard>
+</Card>

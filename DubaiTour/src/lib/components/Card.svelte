@@ -1,3 +1,4 @@
+<section>
 <div class="card">
     <div class="card-body">
       <h5 class="card-title"><slot name="title"></slot></h5>
@@ -5,13 +6,15 @@
       <p class="card-text"><slot name="text"></slot></p>
     </div>
   </div>
+</section>
 
 <style>
     .card {
-        width: 60%;
         display: block;
-        margin-right: auto;
-        margin-left: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 65%;
+        margin: 0;
         margin-bottom: 20px;
         margin-top: 20px;
         border-radius: 20px;
