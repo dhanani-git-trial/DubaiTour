@@ -1,6 +1,7 @@
 <script>
     import Nav from '$components/Nav.svelte';
     import Card from '$components/Card.svelte';
+    import '$css/form.css';
 </script>
 <Nav/>
 <br><br><br>
@@ -48,9 +49,9 @@
     <label for="exampleFormControlTextarea1">Example textarea</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+  <iframe src="form.html"></iframe>
   <div class="text-center"><button type="button" class="btn btn-success">Submit</button></div>
 </form>
-    
 </span>
 
 </Card>
