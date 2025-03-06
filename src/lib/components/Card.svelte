@@ -20,7 +20,11 @@
         border-radius: 20px;
         background: rgba(0, 0, 0, 0.6);
         border: none;
-        color: white;
+        color: white !important;
+    }
+
+    h6 {
+      color: lightblue !important;
     }
 
 </style>
