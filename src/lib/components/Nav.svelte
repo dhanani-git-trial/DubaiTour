@@ -1,6 +1,7 @@
 <script>
   import '$css/global.css';
   import Logo from '$lib/images/logo.png';
+  import { base } from '$app/paths';
 </script>
 
 
@@ -9,8 +10,8 @@
       <div class="nav">
           <ul>
             <img src={Logo} alt="Dubai"/>
-              <li><a href="/">About</a></li>
-              <li><a href="/history">History</a></li>
+              <li><a href="{base}/">About</a></li>
+              <li><a href="{base}/history">History</a></li>
               <li><a href="#">Skills</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Contact</a></li>
