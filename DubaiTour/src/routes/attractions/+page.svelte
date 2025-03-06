@@ -58,5 +58,5 @@ The Dubai Aquarium & Underwater Zoo Is home to thousands of aquatic animals, it'
     <span slot="title">Dubai's Miracle Garden</span>
     <span slot="subtitle">The only way to describe Dubai’s Miracle Garden is nothing less than a Floral Wonderland: The Dubai Miracle Garden is the world’s largest natural flower garden, featuring over 45 million flowers. It's a stunning display of vibrant colors and floral sculptures, open during the cooler months.
 
-</span>
+ </span>
 </Card>
