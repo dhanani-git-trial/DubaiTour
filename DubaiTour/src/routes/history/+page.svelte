@@ -2,8 +2,9 @@
   import Card from "$components/Card.svelte";
   import Nav from "$components/Nav.svelte";
   import "$css/history.css";
+  // Select all .carousel-inner elements
 
-  function trans() {
+    function trans() {
     const elements = document.querySelectorAll('.carousel-indicators');
     
     elements.forEach((element) => {
@@ -21,13 +22,14 @@
       });
     });
   }
+
 </script>
 
 
 
 <Nav/>
 <article>
-<div class="carousel slide" data-ride="carousel" data-interval="3000">
+<div class="carousel slide" data-ride="carousel" data-interval="1000000">
   <ol on:click={trans} class="carousel-indicators">
     <li data-target=".carousel" data-slide-to="0" class="active"></li>
     <li data-target=".carousel" data-slide-to="1"></li>

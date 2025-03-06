@@ -2,7 +2,12 @@ article {
     display: flex;
     vertical-align: middle;
     height: 100%;
+    width: 100%;
     align-items: center;
+}
+
+.carousel {
+    width: 100%;
 }
 
 html, body { 
