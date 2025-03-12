@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Markers Using Graphics</title>
+
+  <style>
+    
+  </style>
+
+  
+</head>
+<body>
+  <html>
+  <head>
+    <title>Advanced Markers Using Graphics</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locationModalLabel">Location Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe id="locationIframe" width="100%" height="400px" src="" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      ;((g) => {
+        var h,
+          a,
+          k,
+          p = "The Google Maps JavaScript API",
+          c = "google",
+          l = "importLibrary",
+          q = "__ib__",
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement("script"));
+              e.set("libraries", [...r] + "");
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set("callback", c + ".maps." + q);
+              a.src =
+                `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + " could not load.")));
+              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+              m.head.append(a);
+            }));
+
+        d[l]
+          ? console.warn(p + " only loads once. Ignoring:", g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({
+        key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg",
+        v: "beta",
+      });
+
+      async function initMap() {
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement, PinElement } =
+          await google.maps.importLibrary("marker");
+
+        const map = new Map(document.getElementById("map"), {
+          center: { lat: 25.176987, lng: 55.196249 },
+          zoom: 10,
+          mapId: "4504f8b37365c3d0",
+          mapTypeId: "satellite",
+          disableDefaultUI: true,
+        });
+
+        // Locations with corresponding iframe URLs
+        const locations = [
+          {
+            lat: 25.197197,
+            lng: 55.274376,
+            icon: "fa-solid fa-a",
+            description:
+              "The tallest building in the world, standing at 828 meters (2,717 feet), offering breathtaking views of the city.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/A",
+          },
+          {
+            lat: 25.198492,
+            lng: 55.279171,
+            icon: "fa-solid fa-b",
+            description:
+              "One of the largest malls in the world, featuring over 1,200 shops, an aquarium, and an ice rink.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/B",
+          },
+          {
+            lat: 25.197392,
+            lng: 55.279739,
+            icon: "fa-solid fa-c",
+            description:
+              "An impressive water show that features jets of water reaching heights of up to 500 feet, synchronized with music and lights.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/C",
+          },
+          {
+            lat: 25.112552,
+            lng: 55.138719,
+            icon: "fa-solid fa-d",
+            description:
+              "A man-made island shaped like a palm tree, home to luxury hotels and the famous Atlantis The Palm.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/D",
+          },
+          {
+            lat: 25.1940,
+            lng: 55.2316,
+            icon: "fa-solid fa-e",
+            description:
+              "A beautiful beach offering views of the iconic Burj Al Arab and perfect for water sports, sunbathing, and swimming.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/E",
+          },
+          {
+            lat: 25.204129,
+            lng: 55.265099,
+            icon: "fa-solid fa-f",
+            description:
+              "The site of the World Expo 2020, now hosting exhibitions showcasing the future of technology and sustainability.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/F",
+          },
+          {
+            lat: 25.097604,
+            lng: 55.237247,
+            icon: "fa-solid fa-g",
+            description:
+              "One of the richest horse races in the world, held annually in March at the Meydan Racecourse.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/G",
+          },
+          {
+            name: "Dubai Creek",
+            lat: 25.264466,
+            lng: 55.306872,
+            icon: "fa-solid fa-h",
+            description:
+              "The historic heart of Dubai, where visitors can take traditional abra rides and visit the Gold and Spice Souks.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/H",
+          },
+          {
+            name: "Miracle Garden",
+            lat: 25.0166,
+            lng: 55.2407,
+            icon: "fa-solid fa-i",
+            description:
+              "The world’s largest natural flower garden, with over 45 million flowers and stunning floral sculptures, open during the cooler months.",
+            iframe: "https://aspaceboy.github.io/DubaiTour/attractions/I",
+          },
+        ];
+
+        // Loop through locations and add a marker for each with its own unique icon
+        locations.forEach((location) => {
+          const icon = document.createElement("div");
+          icon.innerHTML = `<i class="${location.icon}"></i>`; // Use unique Font Awesome icon for each location
+
+          const faPin = new PinElement({
+            glyph: icon,
+            glyphColor: "#fff",
+            background: "#1484CD",
+            borderColor: "#fff",
+          });
+
+          const marker = new AdvancedMarkerElement({
+            map,
+            position: { lat: location.lat, lng: location.lng },
+            content: faPin.element,
+            title: location.name,
+          });
+
+          // Add an info window to each marker
+          const infowindow = new google.maps.InfoWindow({
+            content: ``,
+          });
+
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+
+            // Set the iframe src dynamically based on the clicked location
+            const iframe = document.getElementById("locationIframe");
+            iframe.src = location.iframe;
+
+            // Show the Bootstrap modal
+            $('#locationModal').modal('show');
+          });
+        });
+
+        // Resize event handler moved inside initMap
+        window.addEventListener("resize", () => {
+          const center = map.getCenter();
+          google.maps.event.trigger(map, "resize");
+          map.setCenter(center); // Maintain center after resizing
+        });
+      }
+
+      initMap();
+    </script>
+  </body>
+</html>
+
+
+  <script>
+    
+  </script>
+</body>
+</html>

@@ -1,14 +1,6 @@
 <div class="card1">
     <div class="content">
-      <svg
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M20 9V5H4V9H20ZM20 11H4V19H20V11ZM3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM5 12H8V17H5V12ZM5 6H7V8H5V6ZM9 6H11V8H9V6Z"
-        ></path>
-      </svg>
+      <h1><slot name="title"></slot></h1>
       <p class="para"><slot name="subtitle"></slot></p>
     </div>
   </div>
@@ -23,18 +15,24 @@
       border-radius: 10px;
       line-height: 1.6;
       transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+      font-family: 'Kanit';
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 0px;
     }
   
     .content {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 24px;
+      gap: 12px;
       padding: 36px;
       border-radius: 20px;
       color: #ffffff;
       overflow: hidden;
-      background: #0a3cff;
+      background:rgba(3, 70, 148, 1);
       transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     }
   
@@ -69,30 +67,14 @@
       transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     }
   
-    .content svg {
-      width: 48px;
-      height: 48px;
-    }
-  
     .content .para {
       z-index: 1;
       opacity: 1;
       font-size: 16px;
       transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+      margin-bottom: 0px;
     }
-  
-    .content .link {
-      z-index: 1;
-      color: #fea000;
-      text-decoration: none;
-      font-family: inherit;
-      font-size: 16px;
-      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-  
-    .content .link:hover {
-      text-decoration: underline;
-    }
+
   
     .card1:hover {
       transform: translate(0px, -16px);

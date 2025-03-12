@@ -2,6 +2,7 @@
   import Card from "$components/Card.svelte";
   import Nav from "$components/Nav.svelte";
   import "$css/history.css";
+  import Footer from "$components/Footer.svelte";
   // Select all .carousel-inner elements
 
     function trans() {
@@ -79,6 +80,7 @@
       <Card>
         <span slot="title">1980s: Growth as a Financial Hub</span>
         <span slot="subtitle">In 1985, Dubai establishes the Dubai International Financial Centre (DIFC), beginning its rise as a global financial center. Then four years later Dubai drops its first shopping mall, the Al Ghurair Centre, opens in Dubai.</span>
+        
       </Card>
     </div>
     <div class="carousel-item">
@@ -124,3 +126,4 @@
   </button>
 </div>
 </article>
+<Footer/>
