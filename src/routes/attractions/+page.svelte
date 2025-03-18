@@ -10,6 +10,7 @@
     import H from "$components/pins/H.svelte";
     import I from "$components/pins/I.svelte";
     import Nav from "$components/Nav.svelte";
+    import Footer from "$components/Footer.svelte";
 </script>
 <Nav/>
 <br /><br /><br />
@@ -148,7 +149,7 @@
         >
     </div>
 </div>
-
+<Footer/>
 <style>
     .cards-container {
         display: grid;
@@ -167,5 +168,6 @@
         border-radius: 20px;
         height: auto !important;
         filter: none !important;
+        margin-bottom: 10px;
     }
 </style>

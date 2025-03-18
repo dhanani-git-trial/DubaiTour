@@ -14,4 +14,5 @@
     <span slot="title">About Us</span>
     <span slot="subtitle">At Dubai Travels, we ensure that everyone gets the best everyone to travel Dubai with a great experience so families can explore its rich culture as a reasonable price.</span>
 </Card>
+<br><br><br><br><br><br><br><br><br><br><br>
 <Footer/>

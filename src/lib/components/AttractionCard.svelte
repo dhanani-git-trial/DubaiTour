@@ -18,6 +18,10 @@
       font-family: 'Kanit';
     }
 
+     img {
+      margin-bottom: 30px;
+     }
+
     h1 {
       font-size: 24px;
       margin-bottom: 0px;

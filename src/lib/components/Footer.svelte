@@ -50,6 +50,7 @@
 	padding: 55px 50px;
   color:#fff!important;
   font-family: 'Kanit';
+  bottom: 0;
 }
 
 .footer .footer-left,

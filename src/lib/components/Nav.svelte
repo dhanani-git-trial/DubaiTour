@@ -13,8 +13,8 @@
               <li><a href="{base}/">About</a></li>
               <li><a href="{base}/history">History</a></li>
               <li><a href="{base}/attractions">Attractions</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="{base}/form">Form</a></li>
+
           </ul>
           <div class="menu"><i class="fa-solid fa-bars"></i></div>
       </div>

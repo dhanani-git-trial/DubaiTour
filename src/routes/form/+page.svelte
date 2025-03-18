@@ -35,7 +35,7 @@
 
       <!-- Transportation Section -->
       <div class="form-group">
-        <label for="transportation">Transportation</label>
+        <label for="transportation">Transportation - $2</label>
         <select class="form-control" id="transportation">
           <option>Taxi</option>
           <option>Bus</option>
@@ -113,7 +113,7 @@
         <button
   type="button"
   class="btn btn-success"
-  on:click={() => window.location.href = 'final.html'}
+  on:click={() => window.location.href = 'https://super-duper-chainsaw-pjw6rr6xp9p7f79rg-5173.app.github.dev/confirm'}
 >
   My Discounts
 </button>
