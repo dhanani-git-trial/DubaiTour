@@ -2,7 +2,7 @@
     import Nav from "$components/Nav.svelte";
 </script>
 <Nav/>
-<iframe src="hello.html"></iframe>
+<iframe src="https://dhanani-git-trial.github.io/DubaiTour/hello.html"></iframe>
 <style>
     iframe {
         width: 100%;
