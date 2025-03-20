@@ -113,7 +113,7 @@
         <button
   type="button"
   class="btn btn-success"
-  on:click={() => window.location.href = 'https://super-duper-chainsaw-pjw6rr6xp9p7f79rg-5173.app.github.dev/confirm'}
+  on:click={() => window.location.href = 'https://dhanani-git-trial.github.io/DubaiTour/confirm/'}
 >
   My Discounts
 </button>
